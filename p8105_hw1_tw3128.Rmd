@@ -2,24 +2,38 @@
 title: "p8105_hw1_tw3128"
 author: "Chris"
 date: "2025-09-14"
-output: githun_document
+output: github_document
 ---
 
+# Problem 1
+Firstly, we need to load the package.
 
-Firstly, we need to load the package. I am using "include = FALSE" to make sure\
-that this loading process will not be seen by viewers in the final .html file.
-
-```{r include = FALSE}
+```{r}
 library(moderndive)
 ```
 
 Secondly, I load the dataset "early_january_weather" from the package.
 
-```{r}
+```{r loading_the_data}
 data("early_january_weather")
 ```
 
 
+Thirdly, I do some simple calculations about the size of this dataset and\
+the mean of temperature.
+
+```{r some_simple_calcularions}
+num_row = nrow(early_january_weather)
+num_col = ncol(early_january_weather)
+
+num_row
+num_col
+
+
+mean_temp = mean(early_january_weather$temp)
+
+mean_temp
+```
 
 
 
