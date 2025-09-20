@@ -72,8 +72,21 @@ ggsave("temp-time-scatterplot_from-problem01.png")
 ```
 
 
+# Problem 2
 
+## Create a Dataframe
+```{r}
+problem2_df = 
+  tibble(
+    vec_norm = c(rnorm(n = 10)),
+    vec_logic = c(vec_norm > 0),
+    vec_cha = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+    vec_factor = c("H", "L", "M", "H", "M", "M", "L", "H", "M", "L")
+  )
 
+```
+
+Note: In the vector "vec_factor", "H", "M" and "L" are short of "High", "Medium" and "Low" respectively.
 
 
 
