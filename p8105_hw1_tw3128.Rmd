@@ -88,9 +88,24 @@ problem2_df =
 
 Note: In the vector "vec_factor", "H", "M" and "L" are short of "High", "Medium" and "Low" respectively.
 
+## Calculate the Mean
+
+```{r}
+pull(problem2_df, vec_norm) |>
+  mean()
+
+pull(problem2_df, vec_logic) |>
+  mean()
+
+pull(problem2_df, vec_cha) |>
+  mean()
+
+pull(problem2_df, vec_factor) |>
+  mean()
+```
 
 
-
+I think only numerical vectors have mean values. If some of the elements in a vector are strings, then perhaps we cannot use R to calculate the mean of the vector.
 
 
 
