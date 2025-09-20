@@ -12,6 +12,7 @@ First, I load the package.
 
 ```{r}
 library(moderndive)
+library(tidyverse)
 ```
 
 
@@ -55,6 +56,20 @@ names(early_january_weather)
 * The mean temperature is `r mean(early_january_weather$temp)`.
 
 
+## Scatterplot
+
+```{r}
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +           geom_point() + 
+  labs(
+    x = "Time (hour)",
+    y = "Temperature (\u00B0F)",
+    color = "Humidity",
+    title = "Temperature-Time with Humidity"
+  ) +
+  theme_minimal()
+
+ggsave("temp-time-scatterplot_from-problem01.png")
+```
 
 
 
