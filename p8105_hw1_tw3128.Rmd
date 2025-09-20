@@ -6,38 +6,53 @@ output: github_document
 ---
 
 # Problem 1
-Firstly, we need to load the package.
+
+## Load the Package and Dataset
+First, I load the package.
 
 ```{r}
 library(moderndive)
 ```
 
-Secondly, I load the dataset "early_january_weather" from the package.
+
+Second, I load the dataset "early_january_weather" from the package.
 
 ```{r loading_the_data}
 data("early_january_weather")
 ```
 
 
-Thirdly, I do some simple calculations about the size of this dataset and\
-the mean of temperature.
+## Discription
 
-```{r some_simple_calcularions}
-num_row = nrow(early_january_weather)
-num_col = ncol(early_january_weather)
-
-num_row
-num_col
-
-
-mean_temp = mean(early_january_weather$temp)
-
-mean_temp
+```{r show introductions to myself, include = FALSE}
+names(early_january_weather)
+?early_january_weather
 ```
 
+* The dataset "early_january_weather" shows the Hourly meteorological data for LGA, JFK and EWR for the month of January 2013, which contains `r ncol(early_january_weather)` variables. These variables are `r names(early_january_weather)`. Here are some brief descriptions below.
 
 
+  * Variable "origin" means the weather station where it locates. 
 
+  * Variables "year", "month", "day" and "hour" are the time of recording. 
+
+  * "temp" and "dewp" are temperature and dewpoint in Fahrenheit. 
+
+  * "humid" means the relative humidity. "wind_air", "wind_speed" and "wind_gust" refer to wind direction, speed and gust speed respectively.
+
+  * "precip" means the precipitation in inches.
+
+  * "pressure" means sea level pressure in millibars.
+
+  * "visib" means visibility in miles.
+
+  * "time_hour" means date and hour of the recording as a POSIXct date.
+
+
+* There are `r nrow(early_january_weather)` samples and `r ncol(early_january_weather)` variables.
+
+
+* The mean temperature is `r mean(early_january_weather$temp)`.
 
 
 
