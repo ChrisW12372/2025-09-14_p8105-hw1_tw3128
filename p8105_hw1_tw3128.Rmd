@@ -10,7 +10,7 @@ output: github_document
 ## Load the Package and Dataset
 First, I load the package.
 
-```{r}
+```{r results = "hide"}
 library(moderndive)
 library(tidyverse)
 ```
@@ -81,7 +81,7 @@ problem2_df =
     vec_norm = c(rnorm(n = 10)),
     vec_logic = c(vec_norm > 0),
     vec_cha = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
-    vec_factor = c("H", "L", "M", "H", "M", "M", "L", "H", "M", "L")
+    vec_factor = factor(c("H", "L", "M", "H", "M", "M", "L", "H", "M", "L"))
   )
 
 ```
@@ -107,11 +107,16 @@ pull(problem2_df, vec_factor) |>
 
 I think only numerical vectors have mean values. If some of the elements in a vector are strings, then perhaps we cannot use R to calculate the mean of the vector.
 
+## "as.numetic" Function
+
+```{r results = "hide"}
+as.numeric(problem2_df$vec_logic)
+as.numeric(problem2_df$vec_cha)
+as.numeric(problem2_df$vec_factor)
+```
 
 
-
-
-
+We can convert factors into numeric values, but not strings. I think that's probably because there are some logical relationships in factor vectors, which can be converted into integers like "1" or "2" or "3" etc. However, if a vector contains only strings without any logic, then the result will be "NA".
 
 
 
